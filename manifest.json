@@ -1,0 +1,41 @@
+{
+    "manifest_version":2,
+    "name":"喜羊羊测试",
+    "version":"1.0.0",
+    "description":"__aaaaa__",
+    "icons":{
+        "16":"img/icon.png",
+        "48":"img/icon.png",
+        "128":"img/icon.png"
+    },
+    "background":{
+        "page":"background.html"
+    },
+    
+    "browser_action":{
+        "default_icon":"img/icon.png",
+        "default_title":"这是一个示例",
+        "default_popup":"popup.html"
+    },
+    "content_scripts":[
+        {
+            "matches":["<all_urls>"],
+            "js":["js/jquery-1.8.3.js","js/content-script.js"],
+            "css":["css/custom.css"],
+            "run_at":"document_start"
+        }
+    ],
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+    "permissions":
+	[
+		"contextMenus", 
+		"tabs", 
+		"notifications", 
+		"webRequest",
+		"webRequestBlocking", 
+		"storage", 
+		"http://*/*", 
+		"https://*/*" 
+	],
+    "default_locale": "zh_CN"
+}
